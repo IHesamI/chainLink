@@ -1,0 +1,27 @@
+[P2P]
+[P2P.V2]
+Enabled = true
+AnnounceAddresses = ['0.0.0.0:9999', '[::]:1337']
+DefaultBootstrappers = ['12D3KooWMHMRLQkgPbFSYHwD3NBuwtS1AmxhvKVUrcfyaGDASR4U@0.0.0.0:9999', '12D3KooWM55u5Swtpw9r8aFLQHEtw7HR4t44GdNs654ej5gRs2Dh@[::]:1234']
+DeltaDial = '15s'
+DeltaReconcile = '1m'
+ListenAddresses = ['0.0.0.0:9999', '[::]:1337']
+
+[Log]
+Level = 'warn'
+
+[WebServer]
+AllowOrigins = '\*'
+SecureCookies = false
+
+[WebServer.TLS]
+HTTPSPort = 0
+
+[[EVM]]
+ChainID = '11155111'
+
+[[EVM.Nodes]]
+Name = 'Sepolia'
+WSURL = 'YOUR_ALCHEMY_LINK_WEBSOCKET_URL'
+HTTPURL = 'YOUR_ALCHEMY_LINK_HTTP_URL'
+

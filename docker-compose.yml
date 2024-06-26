@@ -1,0 +1,28 @@
+version: "3.8"
+
+name: chailink-node
+services:
+    postgres:
+        container_name: cl-postgres
+        environment:
+            - POSTGRES_PASSWORD=mysecretpassword
+        ports:
+            - 5432:5432
+        image: postgres
+        volumes:
+            - ./pg-data:/var/lib/postgresql/data
+    chainlink:
+        platform: linux/x86_64/v8
+        container_name: chainlink
+        volumes:
+            - ./chainlink-sepolia:/chainlink
+        stdin_open: true
+        tty: true
+        ports:
+            - 6688:6688
+        extra_hosts:
+            - host.docker.internal:host-gateway
+        image: smartcontract/chainlink:2.10.0
+        command: node -config /chainlink/config.toml -secrets /chainlink/secrets.toml start -a /chainlink/.api
+        depends_on:
+            - postgres
