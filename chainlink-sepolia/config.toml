@@ -22,6 +22,6 @@ ChainID = '11155111'
 
 [[EVM.Nodes]]
 Name = 'Sepolia'
-WSURL = 'YOUR_ALCHEMY_LINK_WEBSOCKET_URL'
-HTTPURL = 'YOUR_ALCHEMY_LINK_HTTP_URL'
+WSURL = 'wss://eth-sepolia.g.alchemy.com/v2/91JmcXN_qdMlVM8Bku5JzE47GUcYuFqh'
+HTTPURL = 'https://eth-sepolia.g.alchemy.com/v2/91JmcXN_qdMlVM8Bku5JzE47GUcYuFqh'
 
